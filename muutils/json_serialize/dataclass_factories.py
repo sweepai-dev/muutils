@@ -89,7 +89,7 @@ def dataclass_serializer_factory(
     return serialize
 
 
-def loader_typecheck_factory(
+def create_type_check_loader(
     key: str,
     expected_type: type,
     error_mode: TypeErrorMode = "except",
@@ -160,7 +160,7 @@ def loader_typecheck_factory(
     return loader
 
 
-def dataclass_loader_factory(
+def create_dataclass_loader(
     cls,
     special_loaders: Optional[dict[str, Callable[[JSONitem], Any]]] = None,
     loader_types_override: Optional[dict[str, type]] = None,
